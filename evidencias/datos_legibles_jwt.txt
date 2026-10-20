@@ -1,4 +1,4 @@
 Login correcto: datos legibles del JWT (sin firma ni token completo)
 companyUserId: 3
 companyId: 1
-exp: 1792524172
+exp: 1792524396
