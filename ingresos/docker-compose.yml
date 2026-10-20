@@ -1,0 +1,30 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: actividad4_mysql
+    restart: unless-stopped
+
+    environment:
+      MYSQL_DATABASE: actividad4_db
+      MYSQL_USER: actividad4
+      MYSQL_PASSWORD: actividad4
+      MYSQL_ROOT_PASSWORD: root123
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - actividad4_mysql_data:/var/lib/mysql
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h localhost -uactividad4 -pactividad4"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  actividad4_mysql_data:

@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+strawberry-graphql[fastapi]
+sqlalchemy
+pymysql
+python-dotenv
+pydantic[email]
+pwdlib[argon2]
+pyjwt

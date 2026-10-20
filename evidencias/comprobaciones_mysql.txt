@@ -1,0 +1,33 @@
+Base de prueba: actividad6_graphiql
+Consultas ejecutadas después de los casos en GraphiQL
+
+Caso 1: sin token
+SELECT COUNT(*) AS filas FROM accounts WHERE name = "A6 sin token";
+filas
+0
+
+Caso 3: María sin accounts.write
+SELECT COUNT(*) AS filas FROM accounts WHERE name = "A6 Maria rechazada";
+filas
+0
+
+Caso 5: Pedro en CONSULTA
+SELECT COUNT(*) AS filas FROM transactions WHERE short_description = "A6 Pedro rechazado";
+filas
+0
+
+Caso 9a: token alterado
+SELECT COUNT(*) AS filas FROM accounts WHERE name = "A6 token alterado";
+filas
+0
+
+Caso 9b: token vencido
+SELECT COUNT(*) AS filas FROM accounts WHERE name = "A6 token vencido";
+filas
+0
+
+Caso 8: existen cuentas en ambas empresas; GraphiQL solo devolvió las de la empresa 2
+SELECT company_id, COUNT(*) AS cuentas FROM accounts WHERE company_id IN (1, 2) GROUP BY company_id ORDER BY company_id;
+company_id	cuentas
+1	5
+2	4
